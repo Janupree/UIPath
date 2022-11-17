@@ -1,0 +1,319 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ExtractDataTable" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="DT_InitialExtraction" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="DT2" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="DT2_InitialExtraction" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1028,2816</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="42">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Core.Activities.UiTree</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="65">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This is  to scrape data from amzon website adn store into Excel sheet and again search the data from excel to website .If price not chnaged then add a new column to excel and add comments as not changed if changed then update as price changed" DisplayName="Amazon website" sap:VirtualizedContainerService.HintSize="774,2751" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch for Amazon Website" sap:VirtualizedContainerService.HintSize="712,2587" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser -Chrome-Amazon" sap:VirtualizedContainerService.HintSize="674,2350" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="Always" ScopeGuid="a39ba98d-6760-43fa-84f6-e092fcdd9319" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Perform Search And Data Extraction of Apple Macbook Results" sap:VirtualizedContainerService.HintSize="640,2124" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Name="Dt_FirstInput" />
+                  <Variable x:TypeArguments="x:Boolean" Name="ProductNameExists" />
+                  <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="DT_FinalExtraction" />
+                  <Variable x:TypeArguments="x:Int32" Name="index" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Execution Started" sap:VirtualizedContainerService.HintSize="578,101" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Amazon Website process Started&quot;]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type In Search Box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="578,227" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="a39ba98d-6760-43fa-84f6-e092fcdd9319" Text="Apple Macbook[k(enter)]" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.amazon.in/ref=nav_logo" DesignTimeRectangle="410, 90, 1053, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT twotabsearchtextb…'" FullSelectorArgument="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' type='text' class='nav-input nav-progressive-attribute' aaname='' /&gt;" Guid="bf4ca70d-e768-4138-8d04-bdcbbe7bb705" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABCEAAAAqCAYAAACN+kEuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGISURBVHhe7djBTcNQEEXRXy6piFAKfNKBLSFaiGjAXsb2oHiHxNJ+q3Okq1lMB6/VWytJkiRJkqSza9vtUj/fH/W8kiRJkiRJZ9Xmea5xHAsAAADgDEYIAAAAIMIIAQAAAEQYIQAAAIAIIwQAAAAQYYQAAAAAIowQAAAAQIQRAgAAAIgwQgAAAAARRggAAAAgwggBAAAARBghAAAAgAgjBAAAABBhhAAAAAAijBAAAABAhBECAAAAiDBCAAAAABFGCAAAACDCCAEAAABEGCEAAACACCMEAAAAEGGEAAAAACKMEAAAAECEEQIAAACIMEIAAAAAEUYIAAAAIMIIAQAAAEQYIQAAAIAIIwQAAAAQYYQAAAAAIowQAAAAQIQRAgAAAIgwQgAAAAARRggAAAAgwggBAAAARBghAAAAgIg/I8QwDLVtmyRJkiRJ0uGtn5e9Nk3TPkKs67q3LIskSZIkSdJhPfrLXnsuEfev9+q9S5IkSZIknVZbr60er+3fpyRJkiRJ0jH1+gXRH7UIh9iv7gAAAABJRU5ErkJggg==" InformativeScreenshot="bd3e94f7b364d51b13ded525465a1481.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="369, 93, 19, 33" ElementType="Text" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl id='nav-search-label-id' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nav-search-label-id' tag='SPAN' type='' class='nav-search-label nav-progressive-content' aaname='All' check:innerText='All' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAlCAYAAACpmHIGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEqSURBVEhL7ZK/S8NAGIb9J285hCxdQkE6dsrQLCI9hA461EEX6xAQQdKhICmlIA4lS5eABORADkKW/AGvyV1/hX7gcNbphgfu3jc8udyXs6qqcCqcnMTJSZycxMlJ/lsusV4ssf5q5+m9j8upNPvVA/yrGPKgpziWr+7gMQZvnLbyjxuG/nNu9u+3YP0X5Ac9xZE8HXsInyYIuUBS7HN7eZFAaGmJZMgh5uWus5aXcwE+TFA26zcBNphBbTpLucJswBC+5lDfCuozRsgCxNL0dnIZI2Acna4Pf0PnfC+0kstpAH5trmSb6WvqRcjqdSP3HzPTNfLuROfbZyl28qjXHqBGD/gCUVa/aDECr39RffpiiVH9Vb+dvjXQv8bJSZycxMlJnJzkhPIKP2NrfOlEX9enAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <uix:NClick ClickType="Single" DisplayName="Click Sort By option" sap:VirtualizedContainerService.HintSize="578,166" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a39ba98d-6760-43fa-84f6-e092fcdd9319" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.amazon.in/s?k=apple+macbook&amp;crid=153TPDECMLCKT&amp;sprefix=apple+macbook%2Caps%2C285&amp;ref=nb_sb_noss_1" DesignTimeRectangle="1735, 188, 116, 20" DesignTimeScaleFactor="1" FriendlyName="'Sort by:Featured'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;h1&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;span&amp;gt;span&amp;gt;span&amp;gt;span' parentid='a-autoid-0' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='a-autoid-0' tag='SPAN' class='a-button-text a-declarative' aaname='' check:innerText='Sort by:Featured' /&gt;" Guid="892ab2f9-a59f-42ca-9068-9feafd72b30b" ImageBase64="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" InformativeScreenshot="18c3736d14f6365231c012eae5ed1816.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.in : apple macbook' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ClickType="Single" DisplayName="Click  Price Low to High" sap:VirtualizedContainerService.HintSize="578,166" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a39ba98d-6760-43fa-84f6-e092fcdd9319" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.amazon.in/s?k=apple+macbook&amp;crid=153TPDECMLCKT&amp;sprefix=apple+macbook%2Caps%2C285&amp;ref=nb_sb_noss_1" DesignTimeRectangle="1684, 219, 168, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Price: Low to High'" FullSelectorArgument="&lt;webctrl id='s-result-sort-select_1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='s-result-sort-select_1' tag='A' type='' class='a-dropdown-link' aaname='Price: Low to High' check:innerText='Price: Low to High' /&gt;" Guid="0e49f4bb-7c21-415c-b29d-4ede6b350ff5" ImageBase64="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" InformativeScreenshot="0c55468438460f6e95b46cbfe11cd031.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.in : apple macbook' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DT_InitialExtraction]" DisplayName="Extract Apple MacBook Product Details" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Product Name'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Product Name Url'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column5' Name='Product Price'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text' name2='Column3' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column5' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="578,166" sap2010:WorkflowViewState.IdRef="NExtractData_1" InteractionMode="DebuggerApi" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="a39ba98d-6760-43fa-84f6-e092fcdd9319" Version="V3">
+                  <uix:NExtractData.NextLink>
+                    <uix:TargetAnchorable BrowserURL="https://www.amazon.in/s?k=apple+macbook&amp;s=price-asc-rank&amp;crid=26JUCEPXK3HNP&amp;qid=1668066331&amp;sprefix=apple+macbook%2Caps%2C297&amp;ref=sr_st_price-asc-rank&amp;ds=v1%3AZH1C4afEeXZkpz36sve7MLjNZSL%2BoBKBHGdh4dHbH8g" DesignTimeRectangle="1159, 895, 95, 48" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl aria-label='Go to next page, page 2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Go to next page, page 2' tag='A' type='' class='s-pagination-item s-pagination-next s-pagination-button s-pagination-separator' aaname='Next' check:innerText='Next' /&gt;" Guid="545ade37-42de-4b27-8db0-615e7a383d5d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGMAAAA0CAYAAACesIbaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO8SURBVHhe7Zy9S1thFIf9D0r+gFan3KUEpw6F6hS3IhkUiiIOCg52qlKokkWnGjrU0qFba4USHUo6iC7FyVanBCpqVWJtNKLW+BESRf31nPuRDz/qR8l939bzwMHc11zB83jOeSO8twyCNpQdHR1BorRxfHxcFOdR9m12FhKljem5OXxfXEQimcReOn2uEGlTLsDJz+7vY31zE3MLC6YUp2IKERkuwwJWSMbM/DwODw+LhIgMRbCQxOqqWSEOIkMRXBHcsnZ3d3PVITIUwjPkJ1WH065EhkJ4qPMu6+DgQGSohgXwtjebzRbL4P2w4D6cd5GhCZz3TCZj7qpEhmJEhkaIDI0QGRohMjRCZGiEyNAIkaERIqOARw0NuFNRgcHBQXvFXZTKSI5042GgE5Ele8FhbQxdgW6MrtnXLnHX58Mtj8cMFULUyhhuMn9xb1sESXvNJDGERk8Twgn7+tqsIdzsQd+UfXkBsVgMt8vLlQlRLyNQjzrDQMdIyl4lzpGRScURjcWR2rMXLiSK/qrLy2BUClEvo3kI0ZFOeKt68dVJ8kkZe1G8aa6E934ttbVa3DMq0f7J6mHxD63w+kO5e+Nv6+lnDiD+JZRLqBONw5fre6qEaCEjSe0k0mbA/yKKDH/jhIzoy2p4g2NwaifzuRteI0R/90wcYefeJbrPaEU4N4Mm0UfJvEplOKgQookMghPpqUF/jF4XybBaTcfHNaRSKSumB4orh+5tMWrg9xtoGY7bi8zfyeCd1c2UQZgtpo5ajCnGSbaVUJ/falH5eGVXBpPF6FNO2mNENuwlk+vJUCGC0UoGslH0+am3Pw8VyIjjXYAqo3DAnyAzFaKq6EVfkNrZk3w7u44MVSIYvWQQmYlePDATUTAzXtdQxVAlFPrYSFnzZW8SPVXV6JnI0utxdNHOrIVamgXJNTxoz13/GZUiGO1kcMsZDxpFMrg6Rp/VwksJ8vlr4OOv1M5m7Pd6g+OWGMIa7vkhPvO+yXw/Jzcv6Wxu9Ie+K5O1B/ilP2dcDf53CO+gVIhg/i0Z/zkiQyNEhkaIDI0QGRohMjRCZGiEyNAIkaERIkMjzpQhuI9zWEZkaIBzjOzUYRnBfcwDlisrIkM1nHw+evxra0sOWKqGD+UvU1Wk02k5eqwKTrrzuIqdnR3s09zgNUZkuAAnu/BBLsuJBLa3t81ZwbsoB3nEkQvhPOLoB0lY39gwK4JFnHqQyybZkih9bNGgZgk8I7g1cUUUimDK+AOHRGmDq4CDd00nqyEP8BshrjaOr5k53gAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.in: apple macbook' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                  </uix:NExtractData.NextLink>
+                  <uix:NExtractData.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="363, -5260, 1497, 6149" DesignTimeScaleFactor="1" FriendlyName="'if(window.mix_csa){wind…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' parentid='search' tag='DIV' /&gt;" Guid="a5b3b253-05d2-4c31-b97d-c8120cd56501" InformativeScreenshot="6223304fe042e667d7f1f2254ae91355.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.in : apple mac book' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                  </uix:NExtractData.Target>
+                </uix:NExtractData>
+                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Timestamp" DataTable="[DT_InitialExtraction]" DefaultValue="[DateAndTime.Now]" DisplayName="Add TimeStamp Column " sap:VirtualizedContainerService.HintSize="578,195" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AutoIncrement="False" ColumnName="Comments" DataTable="[DT_InitialExtraction]" DisplayName="Add Comments Column" sap:VirtualizedContainerService.HintSize="578,195" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
+                <ui:WriteRange AddHeaders="True" DataTable="[DT_InitialExtraction]" DisplayName="Write Extracted Data to Excel" sap:VirtualizedContainerService.HintSize="578,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Extracted Apple MAc details-1.xlsx">
+                  <ui:WriteRange.StartingCell>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </ui:WriteRange.StartingCell>
+                </ui:WriteRange>
+                <ui:ReadRange AddHeaders="True" DataTable="[DT2_InitialExtraction]" DisplayName="Read Created Data from Excel" sap:VirtualizedContainerService.HintSize="578,97" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Extracted Apple MAc details-1.xlsx">
+                  <ui:ReadRange.Range>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </ui:ReadRange.Range>
+                </ui:ReadRange>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[DT2_InitialExtraction]" DisplayName="For Each Row in DT2_InitialExtraction Table" sap:VirtualizedContainerService.HintSize="578,61" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="544,1530" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="BPriceChanged" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Search Box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="482,227" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="a39ba98d-6760-43fa-84f6-e092fcdd9319" Text="[CurrentRow(&quot;Product Name&quot;).ToString + &quot;[k(enter)]&quot;]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.amazon.in/s?k=apple+mac+book&amp;page=2&amp;crid=MEDUDMX96ZJR&amp;qid=1668337629&amp;sprefix=apple+mac+book%2Caps%2C296&amp;ref=sr_pg_1" DesignTimeRectangle="396, 90, 1066, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT twotabsearchtextb…'" FullSelectorArgument="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' type='text' class='nav-input nav-progressive-attribute' aaname='' /&gt;" Guid="a92e2af9-0042-4067-a5c8-0676cc0b3dac" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABC4AAAAqCAYAAAB88RqjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVHhe7dixjcJQEEXR34MjZ9DdUqMhhUWyi7EdYnuQYLU1vOAc6QYzJbzW9eeSJEmSJElKrK3rWr/PZwEAAAAkOW6X73AxTdPfCwAAACCD4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFiGCwAAACCW4QIAAACIZbgAAAAAYhkuAAAAgFj/w8U4jnUchyRJkiRJUkz79VJtWZbPcLHve23bJkmSJEmSFNFr+Kk2z3PdH48ahkGSJEmSJCmq1vXn6vrT5wAAAADIUfUGgPGUsQ2IJCEAAAAASUVORK5CYII=" InformativeScreenshot="4f3baab6ac15594ee756099fc4fb53cb.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.in: apple mac book' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="355, 93, 19, 33" ElementType="Text" FriendlyName="'All'" FullSelectorArgument="&lt;webctrl id='nav-search-label-id' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nav-search-label-id' tag='SPAN' type='' class='nav-search-label nav-progressive-content' aaname='All' check:innerText='All' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAlCAYAAACpmHIGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVEhL7ZIxS8NAFMf9krccQhG6HEIRXDJJ4ZYiDQUHHeygiwqtlIKkiCApRRAHydIlIFkOSqAESj7A30teotEcLmlxueEH794//Lh7L3tpmmJXWLkRKzdi5Uas3Mg/yNUSL4sl1KbaV/BOBa7f6RxcCfRmqpLXMcqDyxYYa2FYiIgIU4fh4pXOb+cMziSq5HXq8k2A4YHE7Z0EH/hIvrItyJO5C97X0rUPl7vw12XWWJ7AH3C4zwnVfQb5GBdZU/nqCZJJeB8x4lWM6EGCdT2oPG8oV7MTsP02xKEoaIMzB9MoyxvJ9a/W1SOZZyMpezSmzijUNclpZCQXN1m//LbOtzwco/NjgUS+4KMxQl2H98f6JXT7ZHGW13/d/tdCt4uVG7FyI1ZuxMqN7FCe4hPt73zZsGMM6AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NExtractData ContinueOnError="True" DataTable="[DT_FinalExtraction]" DisplayName="Extract Data from Search Results " ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Product Name'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Product Price'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="482,166" sap2010:WorkflowViewState.IdRef="NExtractData_2" InteractionMode="DebuggerApi" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="a39ba98d-6760-43fa-84f6-e092fcdd9319" Version="V3">
+                          <uix:NExtractData.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="513, 203, 1197, 6019" DesignTimeScaleFactor="1" FriendlyName="'if(window.mix_csa){wind…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' parentid='search' tag='DIV' /&gt;" Guid="608a1d87-d617-4a19-86dd-3d52052621a5" InformativeScreenshot="187eeaa438ed4ab2759b1c44bbeda20c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.in : 2020 Apple MacBook Air Laptop: Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Space Grey' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                          </uix:NExtractData.Target>
+                        </uix:NExtractData>
+                        <Assign DisplayName="Comparing Results" sap:VirtualizedContainerService.HintSize="482,71" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[BPriceChanged]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">[DT_FinalExtraction.AsEnumerable.Any(function(row) row(0).tostring.Equals(CurrentRow("Product Name").tostring)) and DT_FinalExtraction.AsEnumerable.Any(function(row) row(1).tostring.Equals(CurrentRow("Product Price").tostring))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[BPriceChanged]" sap:VirtualizedContainerService.HintSize="482,657" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If.Then>
+                            <Sequence DisplayName="Price Matches Activities" sap:VirtualizedContainerService.HintSize="400,247" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:WriteCell Cell="[&quot;E&quot;+ (index+2).ToString]" DisplayName="Write into Comments cell-Price Not changed" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Sheet1" Text="Price not Changed" WorkbookPath="Extracted Apple MAc details-1.xlsx" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Price Not Matches Activities" sap:VirtualizedContainerService.HintSize="400,247" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:WriteCell Cell="[&quot;E&quot;+ (index+2).ToString]" DisplayName="Write Into Comment As Price changed" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="Sheet1" Text="Price is Changed" WorkbookPath="Extracted Apple MAc details-1.xlsx" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ui:WriteRange AddHeaders="True" DataTable="[DT_FinalExtraction]" DisplayName="Write Extracted Data to Sheet2" sap:VirtualizedContainerService.HintSize="482,125" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet2" WorkbookPath="Extracted Apple MAc details-1.xlsx">
+                          <ui:WriteRange.StartingCell>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ui:WriteRange.StartingCell>
+                        </ui:WriteRange>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachRow>
+                <ui:LogMessage DisplayName="Process Ended" sap:VirtualizedContainerService.HintSize="578,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Project Ran successfully&quot;]" />
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF5SURBVDhPlVM9S8NQFBW0+QOO2h+gU9vdSbuLNP0HprtDfoBIhYKgWFyFLLpUC10EjbvawcFC4qJDm4CDllQdHHq9JzdfbYLUA4e8d98959738t4cESnMA2afOSuQC40Cg31EkrBtm3Rdp4qqklqtkmEYwUoKDRi4MhZ0u12az+VoYYowzIALg6GMBVqt5gs2ymWyLCuaL+fzQcYEhikDx3H8LkzTpMt2299C2EUG0gbYf6FUikRJZiBtEFaECbo5bjb/ZxAm79Xr/nxb06KY53l+LIG0QaFYjAQ4yOQfQTdTCAy+HJkycIBLfOIQ4AtRhbe1zmajd5fGFt+J+x1hZNBZJfqwEPgbt1sifNwlOoM0NBjcEJ3z8I4XR3E3KXwOiF5aUqy1iEjiDF4vxAS8WpMqvUOiJ2bviKtvSlXkoSDWA4P4Kr89SCJMkMwcB1/qrPATupa8H/4bYHCVGxhNAC0+n8Yd9LliNvzHhOd8wvxGZEYglzWk/AJk0E1AkKBI3AAAAABJRU5ErkJggg==" InformativeScreenshot="b7eca8b3f9cb29a25118e465f5f6a713.jpg" Selector="&lt;html app='chrome.exe' title='Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in' /&gt;" Url="https://www.amazon.in/" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="678,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="400,295" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error message &quot; + exception.ToString]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="338,32" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
